@@ -1,0 +1,53 @@
+{
+  "name": "@teyvat0/dsh-notify",
+  "version": "1.3.4",
+  "description": "Windows toast notifications for DeepSeek Harness: run finished, approval needed, or a question waiting.",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Teyvat0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "notification",
+    "toast",
+    "windows"
+  ],
+  "homepage": "https://github.com/Teyvat0/dsh-notify#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Teyvat0/dsh-notify.git"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "icon": "./icon.svg",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-session"
+      ]
+    }
+  }
+}
