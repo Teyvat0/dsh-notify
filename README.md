@@ -38,13 +38,15 @@ git clone https://github.com/Teyvat0/dsh-notify.git
 plugin_manager action=install_bundle target="<绝对路径>/dsh-notify"
 ```
 
-### npm（尚未发布）
+### npm
 
-计划发布为 `@teyvat0/dsh-notify`。发布后可以：
+已发布到 npm：[`@teyvat0/dsh-notify`](https://www.npmjs.com/package/@teyvat0/dsh-notify)。
 
 ```sh
 dsh plugin --profile desktop add @teyvat0/dsh-notify
 ```
+
+或者让 Agent 执行 `plugin_manager action=install_bundle target="@teyvat0/dsh-notify"`（已实测：装上 registry 版本并自动启用）。
 
 ## 设置
 

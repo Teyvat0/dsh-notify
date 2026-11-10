@@ -1,6 +1,6 @@
 {
   "name": "@teyvat0/dsh-notify",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Windows toast notifications for DeepSeek Harness: run finished, approval needed, or a question waiting.",
   "type": "module",
   "main": "index.js",

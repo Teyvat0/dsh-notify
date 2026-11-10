@@ -6,7 +6,7 @@ window.__ModuleLoader__.load({
     var React = require('react');
     var h = React.createElement;
 
-    var CLIENT_VERSION = '1.3.4';
+    var CLIENT_VERSION = '1.3.5';
 
     var STORAGE_ALWAYS = 'dsh-notify:alwaysNotify';
     var STORAGE_SOUND = 'dsh-notify:sound';

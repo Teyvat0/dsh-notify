@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 
 const SRC = fileURLToPath(new URL('../client.js', import.meta.url));
+const PKG_VERSION = JSON.parse(fs.readFileSync(fileURLToPath(new URL('../package.json', import.meta.url)), 'utf8')).version;
 const results = [];
 function check(name, ok, detail) {
   results.push({ name, ok: !!ok, detail });
@@ -354,7 +355,7 @@ const testBtn = findAll(testSlot.reg.Component({}), (n) => n.type === 'button')[
 testBtn.props.onClick();
 runTimers(0);
 const testToast = notifications.find((n) => n.title === 'DSH 通知测试');
-check('test button stamps version and sound', !!testToast && /v1\.3\.4/.test(testToast.body) && /sound:custom/.test(testToast.body), testToast?.body);
+check('test button stamps version and sound', !!testToast && testToast.body.includes('v' + PKG_VERSION) && /sound:custom/.test(testToast.body), testToast?.body);
 check('completion toast tag fits the 16-char Windows field', !!completion[0] && completion[0].tag.length <= 16, 'tag=' + completion[0]?.tag + ' len=' + completion[0]?.tag?.length);
 check('test toast tag fits the 16-char Windows field', !!testToast && testToast.tag.length <= 16, 'tag=' + testToast?.tag);
 
